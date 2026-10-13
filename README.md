@@ -33,7 +33,7 @@ PT·필라테스 강사가 수업 중 체크한 기록으로 AI가 회원용 일
 
 | 변수 | 어디서 | 비고 |
 |---|---|---|
-| `SUPABASE_SERVICE_ROLE_KEY` | Supabase → Project Settings → API | **비밀**. 결제·크론에 필수 |
+| `FT_SUPABASE_SECRET_KEY` | Supabase(fittrainer 프로젝트) → Project Settings → API Keys → Secret | **비밀**. 결제·크론에 필수. Vercel Supabase 연동이 만든 `SUPABASE_SERVICE_ROLE_KEY`는 다른(빈) DB 것이므로 쓰지 않음 |
 | `ANTHROPIC_API_KEY` | console.anthropic.com | **비밀** |
 | `NEXT_PUBLIC_TOSS_CLIENT_KEY` / `TOSS_SECRET_KEY` | 토스페이먼츠 개발자센터 → API 키 | 먼저 `test_ck_`/`test_sk_`로 테스트 |
 | `CRON_SECRET` | 직접 생성 (32자 이상 무작위 문자열) | **비밀** |

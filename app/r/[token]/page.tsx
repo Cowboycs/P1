@@ -1,3 +1,4 @@
+import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY } from "@/lib/supabase/config";
 import { notFound } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
 import ReportView, { type Item, type Report } from "@/components/ReportView";
@@ -9,7 +10,7 @@ export default async function MemberReport({ params }: { params: Promise<{ token
   const { token } = await params;
   if (!/^[a-f0-9]{24,64}$/.test(token)) notFound();
   // 익명 키 + 보안 함수(get_report)로 발송된 일지만 조회
-  const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, { auth: { persistSession: false } });
+  const sb = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, { auth: { persistSession: false } });
   const { data } = await sb.rpc("get_report", { p_token: token });
   if (!data) notFound();
   const d = data as { held_on: string; items: Item[]; report: Report; member_name: string; goal: string; trainer_name: string; gym_name: string };
