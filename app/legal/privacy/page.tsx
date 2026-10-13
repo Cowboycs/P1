@@ -1,4 +1,5 @@
 import LegalShell from "@/components/LegalShell";
+import { BIZ, show } from "@/lib/biz";
 export const metadata = { title: "개인정보처리방침" };
 
 export default function Privacy() {
@@ -29,7 +30,7 @@ export default function Privacy() {
       <h2>6. 회원용 일지 링크</h2>
       <p>발송된 일지는 추측이 불가능한 고유 링크로만 열람할 수 있고 검색엔진에 노출되지 않습니다.</p>
       <h2>7. 개인정보 보호책임자</h2>
-      <p>{process.env.NEXT_PUBLIC_BIZ_CEO || "성명 미입력"} · {process.env.NEXT_PUBLIC_BIZ_EMAIL || "이메일 미입력"}</p>
+      <p>{BIZ.name} 대표 {show(BIZ.ceo, "성명 미입력")} · {show(BIZ.email, "이메일 미입력")}</p>
     </LegalShell>
   );
 }

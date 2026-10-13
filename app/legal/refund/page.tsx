@@ -1,4 +1,5 @@
 import LegalShell from "@/components/LegalShell";
+import { BIZ, show } from "@/lib/biz";
 export const metadata = { title: "환불 정책" };
 
 export default function Refund() {
@@ -12,7 +13,7 @@ export default function Refund() {
       <ul>
         <li>결제일로부터 7일 이내이고 해당 기간에 AI 일지 발송 이력이 없으면 전액 환불합니다.</li>
         <li>그 외에는 남은 일수에 비례한 금액을 환불합니다(일할 계산, 결제대행 수수료 제외 없음).</li>
-        <li>환불 요청: {process.env.NEXT_PUBLIC_BIZ_EMAIL || "고객센터 이메일 미입력"}. 영업일 3일 이내 처리하며, 카드 취소는 카드사 사정에 따라 3~7영업일이 걸릴 수 있습니다.</li>
+        <li>환불 요청: {show(BIZ.email, "고객센터 이메일 미입력")}. 영업일 3일 이내 처리하며, 카드 취소는 카드사 사정에 따라 3~7영업일이 걸릴 수 있습니다.</li>
       </ul>
     </LegalShell>
   );
