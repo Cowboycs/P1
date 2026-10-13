@@ -5,12 +5,12 @@
  */
 const DEFAULTS = {
   name: "두교글로벌",
-  ceo: "",
+  ceo: "김동완",
   no: "158-62-00442",
-  mailorder: "",
-  address: "",
-  phone: "",
-  email: "",
+  mailorder: "2024-부산사상구-0184",
+  address: "부산광역시 남구 홍곡로 360, 102동 603호",
+  phone: "010-2672-5252",
+  email: "k4d3mo@gmail.com",
 };
 
 export const BIZ = {
